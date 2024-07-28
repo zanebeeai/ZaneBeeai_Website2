@@ -254,6 +254,9 @@ const Home = () => {
       };
     }
 
+    let spheresLoaded = 0;
+    const totalSpheres = 4;
+
     // Function to add clickable spheres
     function addClickableSphere(position, radius, logo, link, linkName) {
       createDoubleSidedTexture(logo, (texture) => {
@@ -351,6 +354,12 @@ const Home = () => {
 
         scene.add(sphere);
         spheres.push(sphere); // Add sphere to array
+
+        // Check if all spheres are loaded
+        spheresLoaded++;
+        if (spheresLoaded === totalSpheres) {
+          adjustForScreenSize();
+        }
       });
     }
 
@@ -360,9 +369,7 @@ const Home = () => {
     addClickableSphere(new THREE.Vector3(0.5, -2, 0), 0.1, "images/logos/Github.png", "https://github.com/zanzilla22", "GitHub     ");
     addClickableSphere(new THREE.Vector3(1.5, -2, 0), 0.1, "images/logos/Devpost.png", "https://devpost.com/zanzilla22", "Devpost     ");
 
-    // Ensure positions are adjusted for initial screen size after spheres are added
-    setTimeout(adjustForScreenSize, 100);  // Slight delay to ensure spheres are added before adjusting
-
+    // Initial screen size adjustment will now happen after all spheres are loaded
   }, []);
 
   return (
