@@ -15,7 +15,7 @@ const Home = () => {
     const textureLoader = new THREE.TextureLoader();
 
     // Load the textures
-    const matcapTexture = textureLoader.load("textures/matcaps/4.png");
+    const matcapTexture = textureLoader.load("textures/matcaps/8.png");
     const imageTexture = textureLoader.load("images/zaneEVC.jpg");
     const frameTexture = textureLoader.load("textures/matcaps/3.png");
     const linksTexture = textureLoader.load("textures/matcaps/2.png");
@@ -168,7 +168,7 @@ const Home = () => {
         const angle = (i / textString.length) * Math.PI * 2;
         charGroup.position.x = Math.cos(angle) * orbitRadiusX;
         charGroup.position.y = Math.sin(angle) * orbitRadiusY;
-        charGroup.rotation.z = -angle;
+        charGroup.rotation.z = -angle
 
         textGroups.push(charGroup);
         scene.add(charGroup);
@@ -184,7 +184,20 @@ const Home = () => {
           const angle = (index / textString.length) * Math.PI * 2 + elapsedTime * 0.5;
           group.position.x = Math.cos(angle) * orbitRadiusX;
           group.position.y = Math.sin(angle) * orbitRadiusY;
+
+          // Calculate the direction to the camera
+          const directionToCamera = new THREE.Vector3().subVectors(camera.position, group.position).normalize();
+          const upVector = new THREE.Vector3(0, 0, 1);
+          const crossVector = new THREE.Vector3().crossVectors(upVector, directionToCamera).normalize();
+          const dotProduct = upVector.dot(directionToCamera);
+
+          // Calculate the quaternion rotation
+          // const quaternion = new THREE.Quaternion();
+          // quaternion.setFromAxisAngle(crossVector, Math.acos(dotProduct));
+          // group.quaternion.copy(quaternion);
+
           group.rotation.z = -angle-Math.PI/2;
+          // group.rotation.x = Math.PI;
         });
 
         // Move stars towards the foreground
@@ -310,7 +323,7 @@ const Home = () => {
               const angle = (index / linkName.length) * Math.PI * 2 + elapsedTime * 0.5;
               group.position.x = sphere.position.x + Math.cos(angle) * (radius + 0.05);
               group.position.y = sphere.position.y + Math.sin(angle) * (radius + 0.05);
-              group.rotation.z = -angle;
+              group.rotation.z = -angle-Math.PI/2;
             });
 
             sphere.rotation.y += 0.01; // Spin the sphere slowly
