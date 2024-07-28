@@ -184,7 +184,7 @@ const Home = () => {
           const angle = (index / textString.length) * Math.PI * 2 + elapsedTime * 0.5;
           group.position.x = Math.cos(angle) * orbitRadiusX;
           group.position.y = Math.sin(angle) * orbitRadiusY;
-          group.rotation.z = -angle;
+          group.rotation.z = -angle-Math.PI/2;
         });
 
         // Move stars towards the foreground
