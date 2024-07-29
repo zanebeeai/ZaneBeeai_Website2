@@ -155,6 +155,22 @@ body {
   width: 100%;
 }
 
+.experience-description ul {
+  margin: 0;
+  padding: 0 0 0 20px; /* Adjust padding for proper spacing */
+  list-style: none;
+}
+
+.experience-description ul ul {
+  margin: 0;
+  padding: 0 0 0 20px; /* Adjust padding for nested lists */
+  list-style: disc;
+}
+
+.experience-description li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
 .experience-description {
   text-align: justify;
 }
