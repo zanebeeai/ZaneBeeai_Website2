@@ -13,7 +13,6 @@ const experiences = [
         <ul>
           <li><strong>First component:</strong></li>
           <ul>
-            <li>Presented at a conference this week</li>
             <li>Presented @ Canadian Undergrad Math Conference</li>
             <li>Analyzes geodesic trajectories of incoming photons at faster-than-light travel in various standard manifolds (Schwarzschild, Binary black hole systems)</li>
           </ul>
