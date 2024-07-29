@@ -3,10 +3,12 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Home.css';
 
 const Home = () => {
   const canvasRef = useRef(null);
+  const navigate = useNavigate(); // Initialize useNavigate for navigation
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -181,7 +183,7 @@ const Home = () => {
 
         // Rotate each character group around the center circle
         textGroups.forEach((group, index) => {
-          const angle = (index / textString.length) * Math.PI * 2 + elapsedTime * 0.5;
+          const angle = (index / textString.length) * Math.PI * 2 + elapsedTime * 0.25;
           group.position.x = Math.cos(angle) * orbitRadiusX;
           group.position.y = Math.sin(angle) * orbitRadiusY;
 
@@ -389,10 +391,10 @@ const Home = () => {
     <div>
       <div className="header">
         <div className="header-left">
-          <span className="header-name">zane beeai.</span>
+          <span className="header-name" onClick={() => navigate('/')}>zane beeai.</span>
         </div>
         <div className="header-right">
-          <button className="header-button">aboutMe</button>
+          <button className="header-button" onClick={() => navigate('/aboutMe')}>aboutMe</button>
           <button className="header-button">myStuff</button>
         </div>
         <div className="header-underline"></div>
