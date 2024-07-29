@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* Add the font import */
-
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body takes full height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #000; /* Set background to black */
+  color: #fff; /* Set default text color to white */
+  font-family: Arial, sans-serif;
+}
 body {
   background-color: #000; /* Set background to black */
   color: #fff; /* Set default text color to white */
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  overflow-y: auto; /* Ensure the page is scrollable */
 }
 
 .header {
@@ -15,6 +24,7 @@ body {
   padding: 10px 20px;
   background-color: #333;
   color: white;
+  flex-shrink: 0; /* Ensure the header doesn't shrink */
 }
 
 .header-name {
@@ -43,6 +53,7 @@ body {
   flex-direction: column;
   align-items: center; /* Center the content horizontally */
   padding: 40px 20px; /* Add padding to move content down */
+  flex-grow: 1; /* Allow the content to grow and take space */
 }
 
 .description-card {
@@ -81,6 +92,7 @@ body {
   flex-direction: column;
   align-items: center; /* Center the experiences horizontally */
   width: 100%;
+  flex-grow: 1; /* Allow the experiences section to grow and take space */
 }
 
 .experience-title-container {
@@ -192,4 +204,29 @@ body {
 
 .experience-link:hover {
   background-color: #1c86ee;
+}
+
+/* Media query for mobile optimization */
+@media (max-width: 768px) {
+  .description-card {
+    font-size: 1.2em; /* Decrease font size for the description */
+  }
+
+  .experience-body {
+    flex-direction: column; /* Stack image and description vertically */
+    align-items: center;
+  }
+
+  .experience-image {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Add bottom margin */
+    max-width: 100%;
+  }
+
+  .experience-description-subcard {
+    width: 100%; /* Make sure it takes full width */
+  }
+}
+html, body {
+  height: auto; /* Ensure content is scrollable */
 }
