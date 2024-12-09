@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './AboutMe.css';
 import Header from './Header';
 
@@ -6,7 +6,7 @@ const experiences = [
   {
     title: 'Independent Researcher',
     institution: 'Department of Mathematics, University of Toronto',
-    timeframe: 'Jan \'24 - Present',
+    timeframe: 'Jan \'24 - May \'24',
     description: (
       <div>
         Under the guidance of a Math Ph.D. student at UofT, I have been researching GR in raycasting applications. 📚✨
@@ -33,7 +33,11 @@ const experiences = [
         </ul>
       </div>
     ),
-    image: '/images/experiences/uoftResearch.png',
+    images: [
+      '/images/experiences/uoftResearch2.jpg',
+      '/images/experiences/uoftResearch1.png',
+      '/images/experiences/uoftResearch3.jpg',
+    ],
     links: [
       { name: 'Beamer', url: '#' },
       { name: 'CUMC Video', url: '#' }
@@ -44,7 +48,9 @@ const experiences = [
     institution: 'uWaterloo',
     timeframe: 'Feb \'24 - Present',
     description: 'Investigating quantum mechanics and its applications.',
-    image: '/path/to/image2.png',
+    images: [
+      '/images/experiences/uoftResearch5.png',
+    ],
     links: [
       { name: 'Link 1', url: '#' },
       { name: 'Link 2', url: '#' }
@@ -55,7 +61,9 @@ const experiences = [
     institution: 'Sunnybrook',
     timeframe: 'July \'24 - Present',
     description: 'Working on biomedical engineering projects.',
-    image: '/path/to/image3.png',
+    images: [
+      '/images/experiences/uoftResearch5.png',
+    ],
     links: [
       { name: 'Link 1', url: '#' },
       { name: 'Link 2', url: '#' }
@@ -64,6 +72,15 @@ const experiences = [
 ];
 
 const AboutMe = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div>
       <Header />
@@ -72,7 +89,7 @@ const AboutMe = () => {
           <div className="description-subcard">
             <p className="description-text">I research <a href="/myStuff"><strong>stuff</strong></a>. Sometimes I write that <a href="/myStuff"><strong>stuff</strong></a> down.<br/>
             I think of cool <a href="/myStuff"><strong>stuff</strong></a>. Sometimes I build said <a href="/myStuff"><strong>stuff</strong></a>.<br/>
-            there's not much else to say :P</p>
+            <div className = "description-text-small"> there's not much else to say :P</div></p>
           </div>
         </div>
         <div className="experiences">
@@ -90,7 +107,24 @@ const AboutMe = () => {
                 <span className="timeframe">{exp.timeframe}</span>
               </div>
               <div className="experience-body">
-                <img src={exp.image} alt={exp.title} className="experience-image" />
+                <div className="experience-images">
+                  {isMobile
+                    ? exp.images.length > 0 && (
+                        <img
+                          src={exp.images[0]}
+                          alt={`${exp.title} Main Image`}
+                          className="experience-image"
+                        />
+                      )
+                    : exp.images.map((image, imgIndex) => (
+                        <img
+                          key={imgIndex}
+                          src={image}
+                          alt={`${exp.title} Image ${imgIndex + 1}`}
+                          className="experience-image"
+                        />
+                      ))}
+                </div>
                 <div className="experience-description-subcard">
                   <div className="experience-description">{exp.description}</div>
                 </div>
