@@ -34,13 +34,13 @@ const experiences = [
       </div>
     ),
     images: [
-      '/images/experiences/uoftResearch2.jpg',
-      '/images/experiences/uoftResearch1.png',
-      '/images/experiences/uoftResearch3.jpg',
+      '/images/experiences/uoftResearch2-logo.png',
+      '/images/experiences/uoftResearch1-logo.png',
+      '/images/experiences/uoftResearch3-logo.png',
     ],
     links: [
-      { name: 'Beamer', url: '#' },
-      { name: 'CUMC Video', url: '#' }
+      { name: 'Beamer', url: 'https://drive.google.com/file/d/1TQltJbAtJvbY7m3fiIe0j8cCMClyZOub/view?usp=sharing' },
+      // { name: 'CUMC Video', url: '#' }
     ]
   },
   {
