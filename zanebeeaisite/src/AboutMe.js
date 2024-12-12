@@ -4,17 +4,18 @@ import Header from './Header';
 
 const experiences = [
   {
-    title: 'Independent Researcher',
+    title: 'Student Researcher',
     institution: 'Department of Mathematics, University of Toronto',
     timeframe: 'Jan \'24 - May \'24',
     description: (
       <div>
-        Under the guidance of a Math Ph.D. student at UofT, I have been researching GR in raycasting applications. 📚✨
+        Under the guidance of Dr. Ahmed Ellithy at UofT, I have been researching GR in raycasting applications. 📚✨
         <ul>
           <li><strong>First component:</strong></li>
           <ul>
-            <li>Presented @ Canadian Undergrad Math Conference</li>
+            <li>Presented @ Canadian Undergrad Math Conference (UBC) & Undergraduate Research in Technology Conference (MIT) </li>
             <li>Analyzes geodesic trajectories of incoming photons at faster-than-light travel in various standard manifolds (Schwarzschild, Binary black hole systems)</li>
+            <li>Accepted publication in IEEE Xplore (May 2025)</li>
           </ul>
           <li><strong>Application:</strong></li>
           <ul>
@@ -43,32 +44,47 @@ const experiences = [
       // { name: 'CUMC Video', url: '#' }
     ]
   },
+  
   {
-    title: 'Independent Researcher',
-    institution: 'uWaterloo',
-    timeframe: 'Feb \'24 - Present',
-    description: 'Investigating quantum mechanics and its applications.',
-    images: [
-      '/images/experiences/uoftResearch5.png',
-    ],
-    links: [
-      { name: 'Link 1', url: '#' },
-      { name: 'Link 2', url: '#' }
-    ]
-  },
-  {
-    title: 'Research Intern',
-    institution: 'Sunnybrook',
+    title: 'Research Assistant',
+    institution: 'Sunnybrook Research Institute',
     timeframe: 'July \'24 - Present',
-    description: 'Working on biomedical engineering projects.',
+    description: (
+      <div>
+        Researched simultaneous optical and acoustic signatures of bubble cavitation in small channels for antivascular therapy under the mentorship of Dr. David Goertz. 🔬✨
+        <ul>
+          <li><strong>Focus:</strong></li>
+          <ul>
+            <li>Analyzed high-speed optical imaging and acoustic frequency spectra of microbubble clouds.</li>
+            <li>Studied dynamic behaviors under pressures ranging from 100 kPa to 3000 kPa, relevant for focused ultrasound (FUS) therapies.</li>
+          </ul>
+          <li><strong>Techniques:</strong></li>
+          <ul>
+            <li>Developed custom segmentation algorithms for tracking microbubble dynamics.</li>
+            <li>Performed Fourier, short-time Fourier, and S-transform analyses of cavitation data.</li>
+          </ul>
+        </ul>
+        This work identifies harmonic and subharmonic patterns to improve the precision and safety of FUS therapies. Contributions have implications for both cancer and neurological treatments. 💻🔭
+        <ul>
+          <li><strong>Outcome:</strong></li>
+          <ul>
+            <li>Proposed markers for cavitation thresholds to enhance antivascular therapy.</li>
+            <li>Developed insights into structured cavitation behaviors in small channels.</li>
+          </ul>
+        </ul>
+        also I ranked <i>dead last</i> in the lab's baking contest. 🍪🥲
+      </div>
+    ),
     images: [
-      '/images/experiences/uoftResearch5.png',
+      '/images/experiences/sunnybrook1.jpg',
+      '/images/experiences/sunnybrook2.jpg',
+      '/images/experiences/sunnybrook3.jpg',
     ],
     links: [
-      { name: 'Link 1', url: '#' },
-      { name: 'Link 2', url: '#' }
+      // { name: 'Abstract', url: 'https://drive.google.com/your-abstract-link' }, no links yet bc privacy
     ]
   }
+  
 ];
 
 const AboutMe = () => {
