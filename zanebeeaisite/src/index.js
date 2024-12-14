@@ -14,7 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutMe" element={<AboutMe />} />
-        <Route path="/MyStuff" element={<MyStuff />} />
+        <Route path="/myStuff" element={<MyStuff />} />
       </Routes>
     </Router>
   </React.StrictMode>

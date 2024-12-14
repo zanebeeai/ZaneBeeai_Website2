@@ -5,6 +5,7 @@ import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Home.css';
+import Header from './Header';
 
 const Home = () => {
   const canvasRef = useRef(null);
@@ -389,7 +390,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className="header">
+      <Header />
+      {/* <div className="header">
         <div className="header-left">
           <span className="header-name" onClick={() => navigate('/')}>zane beeai.</span>
         </div>
@@ -398,7 +400,7 @@ const Home = () => {
           <button className="header-button">myStuff</button>
         </div>
         <div className="header-underline"></div>
-      </div>
+      </div> */}
       <canvas ref={canvasRef} className="webgl"></canvas>
     </div>
   );
