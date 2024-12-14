@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* Add the font import */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body takes full height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #000; /* Set background to black */
+  color: #fff; /* Set default text color to white */
+  font-family: Arial, sans-serif;
+}
+body {
+  background-color: #000; /* Set background to black */
+  color: #fff; /* Set default text color to white */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-y: auto; /* Ensure the page is scrollable */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  flex-shrink: 0; /* Ensure the header doesn't shrink */
+}
+
+.header-name {
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.header-underline {
+  height: 2px;
+  background-color: #444;
+  margin-top: 10px;
+}
+
+.myStuffContent {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  padding: 40px 20px; /* Add padding to move content down */
+  flex-grow: 1; /* Allow the content to grow and take space */
+}
+
+.description-card {
+  background-color: #444;
+  padding: 40px 20px; /* Add padding to the description card */
+  margin-bottom: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  font-size: 1.8em;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.6), 
+              inset 0 -4px 6px rgba(0, 0, 0, 0.3); /* Inset shadow effect */
+  border: 1px solid #555; /* Subtle border for clarity */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+  overflow: hidden;
+}
+
+.description-subcard {
+  background-color: #555;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtle inset shadow */
+}
+
+.description-card p {
+  margin: 0;
+}
+
+.description-card a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.description-text {
+  font-family: 'Montserrat', sans-serif; /* Apply the cool font */
+}
+.description-text-small {
+  font-size: 0.6em;
+  font-style: italic;
+  color: #b9b9b9;
+}
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the experiences horizontally */
+  width: 100%;
+  flex-grow: 1; /* Allow the experiences section to grow and take space */
+}
+
+.experience-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px; /* Adjusted vertical spacing */
+  position: relative;
+}
+
+.experience-title-container h2 {
+  font-size: 2.5em;
+  margin: 0 10px; /* Add margin to the sides */
+  font-family: 'Montserrat', sans-serif; /* Apply the cool font */
+  position: relative;
+  z-index: 1;
+}
+
+.experience-title-container .experience-line {
+  flex-grow: 1;
+  /* border-top: 3px solid #1e90ff; Thicker lines */
+  border-top: 3px solid #848484; /* Thicker lines */
+  margin: 0 20px;
+}
+
+.experience-subtitle {
+  font-family: 'Montserrat', sans-serif; /* Apply the cool font */
+  font-size: 0.8em;
+  margin-top: -10px; /* Adjusted vertical spacing */
+  margin-bottom: 20px;
+  color: #b9b9b9;
+}
+
+.experience {
+  background-color: #444; /* Card background */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px; /* Fixed maximum width */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.6), 
+              inset 0 -4px 6px rgba(0, 0, 0, 0.3); /* Inset shadow effect */
+  border: 1px solid #555; /* Subtle border for clarity */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+  overflow: hidden;
+}
+
+.experience:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.7), 
+              inset 0 -6px 8px rgba(0, 0, 0, 0.4); /* Deepen inset shadow */
+}
+
+.experience-title {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  color: #eaeaea; /* Lighter text color */
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.experience-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Define a grid layout */
+  gap: 20px; /* Space between grid items */
+  align-items: center;
+}
+
+.experience-body img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: none; /* Remove the border for a cleaner inset look */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.5), /* Inset shadow for depth */
+              inset 0 -4px 6px rgba(255, 255, 255, 0.1); /* Subtle highlight for 3D effect */
+  background-color: #555; /* Same as the description subcard */
+  padding: 6px; /* Add space to simulate framing */
+  margin-top: 7px;
+  display: block; /* Ensure proper layout behavior */
+  transition: box-shadow 0.2s ease; /* Smooth shadow effect */
+}
+
+.experience-body img:hover {
+  box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.6), /* Slightly deepen shadow on hover */
+              inset 0 -6px 8px rgba(255, 255, 255, 0.15); /* Enhance bottom highlight */
+}
+
+
+
+.experience-description-subcard {
+  background-color: #555; /* Lighter background for text section */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtle inset shadow */
+}
+
+.experience-description ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 20px; /* Add padding for bullets */
+}
+
+.experience-links {
+  margin-top: 20px;
+  text-align: center; /* Center-align links */
+}
+
+.experience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+  margin: 0 5px;
+  padding: 8px 12px;
+  background: linear-gradient(90deg, #1e90ff, #1c86ee);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.experience-link:hover {
+  background: linear-gradient(90deg, #1c86ee, #1e90ff);
+}
+
+@media (max-width: 768px) {
+  .experience-body {
+    grid-template-columns: 1fr; /* Stack image and description vertically */
+  }
+
+  .experience-title {
+    font-size: 1.5em; /* Adjust font size for smaller screens */
+  }
+}
+
+
+.experience-description ul {
+  margin: 0;
+  padding: 0 0 0 20px; /* Adjust padding for proper spacing */
+  list-style: none;
+}
+
+.experience-description ul ul {
+  margin: 0;
+  padding: 0 0 0 20px; /* Adjust padding for nested lists */
+  list-style: disc;
+}
+
+.experience-description li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+.experience-description {
+  text-align: justify;
+}
+
+.experience-links {
+  margin-top: 10px;
+}
+
+.experience-link {
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #1e90ff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.experience-link:hover {
+  background-color: #1c86ee;
+}
+
+/* Media query for mobile optimization */
+
+@media (max-width: 768px) {
+  .description-card {
+    font-size: 1.2em; /* Decrease font size for the description */
+  }
+  .experience-header {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align text to the left */
+    font-size: 0.9em; /* Adjust font size for readability */
+  }
+
+  .experience-header .institution {
+    margin-bottom: 5px; /* Add spacing between institution and timeframe */
+  }
+  .experience-description-subcard {
+    width: 90%; /* Scale to 90% of the screen width */
+    text-align: justify; /* Keep text justified */
+    margin: 0 auto; /* Center-align the card */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+  .experience-body {
+    grid-template-columns: 1fr; /* Stack image and description vertically */
+    gap: 10px; /* Reduce gap for smaller screens */
+  }
+
+  .experience-images {
+    display: flex;
+    justify-content: center; /* Center the single image */
+    margin-bottom: 15px; /* Add spacing below the image */
+  }
+
+  .experience-image {
+    max-width: 90%; /* Ensure the image scales properly */
+    height: auto;
+    margin: 0 auto; /* Center the image */
+    border-radius: 8px; /* Keep rounded edges */
+  }
+
+  .experience-description-subcard {
+    width: 90%; /* Scale text section width */
+    text-align: justify;
+    margin: 0 auto; /* Center-align the description */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .experience-header {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align text to the left */
+    font-size: 0.9em; /* Adjust font size */
+  }
+
+  .experience-header .institution {
+    margin-bottom: 5px; /* Space between institution and timeframe */
+  }
+}
+
+
+
+/* Grid layout for experiences */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+    width: 100%;
+    max-width: 1200px; /* Limit the grid's width */
+    margin: 20px auto; /* Center the grid horizontally */
+    padding: 0 10px; /* Add padding for smaller screens */
+}
+
+/* Unified card styling */
+.experience-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 8px 12px rgba(0, 0, 0, 0.8), 
+                inset 0 -8px 12px rgba(0, 0, 0, 0.5); /* Stronger inset shadow effect */
+    border: 3px solid #555; /* Thicker border for emphasis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: transparent; /* Set transparent background */
+    z-index: 10;
+}
+
+.experience-card:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8); /* Larger external shadow on hover */
+}
+
+/* Image container for cards */
+.experience-card-image-container {
+    display: flex; /* Center the image */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0; /* Remove margin to prevent spacing issues */
+    box-shadow: inset 0 10px 14px rgba(0, 0, 0, 0.9), 
+                inset 0 -10px 14px rgba(0, 0, 0, 0.6); /* Even stronger inset shadow */
+    position: relative; /* Ensure stacking with overlay */
+    z-index: 1;
+}
+
+/* Shadow overlay on hover */
+.experience-card-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 12px 16px rgba(0, 0, 0, 0.9), 
+                inset 0 -12px 16px rgba(255, 255, 255, 0.1); /* Enhanced inset shadow */
+    border-radius: 4px;
+    pointer-events: none; /* Allow interaction with the image */
+    z-index: 2; /* Ensure shadow appears above the image */
+}
+
+/* Image styling for cards */
+.experience-card-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills the container */
+    border-radius: 4px; /* Match the inner radius */
+    transition: transform 0.3s ease;
+    z-index: 0; /* Ensure the image stays below container shadow */
+}
+
+/* On hover, slightly zoom the image */
+.experience-card:hover .experience-card-image {
+    transform: scale(1.1); /* Increased zoom on hover for better visual effect */
+}
+
+/* Overlay for card text */
+.experience-card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darker overlay for better contrast */
+    color: #fff;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif; /* Match old site's font */
+    border-radius: 0 0 8px 8px; /* Rounded corners on the overlay */
+    z-index: 3; /* Ensure overlay is above everything */
+    text-align: center; /* Center-align text */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack title and subtitle vertically */
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    box-sizing: border-box; /* Prevent padding from affecting centering */
+}
+
+/* Title styling */
+.experience-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0; /* Remove unwanted margins */
+    text-align: center; /* Center-align text */
+}
+
+/* Subtitle styling */
+.experience-card-subtitle {
+    font-size: 0.9em;
+    margin: 5px 0 0; /* Add consistent margin */
+    color: #ddd; /* Slightly lighter subtitle */
+    text-align: center; /* Center-align text */
+}
+
+.back-button {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: #373737;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    z-index: 5; /* Ensure it's above other content */
+  }
+  
+  .back-button:hover {
+    background-color: #555;
+  }
+  
+  
+
+
+html, body {
+  height: auto; /* Ensure content is scrollable */
+}

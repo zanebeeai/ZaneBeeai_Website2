@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './AboutMe.css';
+import './MyStuff.css';
 import Header from './Header';
 
 const experiences = [
@@ -227,9 +227,9 @@ const experiences = [
 
 
 ];
-
 const MyStuff = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [selectedExperience, setSelectedExperience] = useState(null);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -238,54 +238,100 @@ const MyStuff = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleCardClick = (experience) => {
+    setSelectedExperience(experience);
+  };
+
+  const handleBackClick = () => {
+    setSelectedExperience(null);
+  };
+
   return (
     <div>
       <Header />
-      <div className="aboutMeContent">
-        
+      <div className="myStuffContent">
         <div className="experiences">
-          <div className="experience-title-container">
-            <div className="experience-line"></div>
-            <h2>Projects</h2>
-            <div className="experience-line"></div>
-          </div>
-          <h4 className="experience-subtitle">here lies the elsewhere-mentioned "stuff".</h4>
-          {experiences.map((exp, index) => (
-            <div key={index} className="experience">
-              <h3 className="experience-title">{exp.projName}</h3>
+          {!selectedExperience ? (
+            // Grid view
+            <>
+              <div className="experience-title-container">
+                <div className="experience-line"></div>
+                <h2>Projects</h2>
+                <div className="experience-line"></div>
+              </div>
+              <h4 className="experience-subtitle">Here lies the elsewhere-mentioned "stuff".</h4>
+              <div className="experience-grid">
+                {experiences.map((exp, index) => (
+                  <div
+                    key={index}
+                    className="experience-card"
+                    onClick={() => handleCardClick(exp)} // Set selectedExperience on click
+                  >
+                    <div className="experience-card-image-container">
+                      <img
+                        src={exp.images[0]}
+                        alt={`${exp.title} Main Image`}
+                        className="experience-card-image"
+                      />
+                    </div>
+                    <div className="experience-card-overlay">
+                      <h3 className="experience-card-title">{exp.projName}</h3>
+                      <p className="experience-card-subtitle">{exp.title}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            // Detailed view
+            <div className="experience">
+              <button onClick={handleBackClick} className="back-button">
+                back →
+              </button>
+              <h3 className="experience-title">{selectedExperience.projName}</h3>
               <div className="experience-header">
-                <span className="institution">{exp.title}</span>
+                <span className="institution">{selectedExperience.title}</span>
               </div>
               <div className="experience-body">
                 <div className="experience-images">
                   {isMobile
-                    ? exp.images.length > 0 && (
+                    ? selectedExperience.images.length > 0 && (
                         <img
-                          src={exp.images[0]}
-                          alt={`${exp.title} Main Image`}
+                          src={selectedExperience.images[0]}
+                          alt={`${selectedExperience.title} Main Image`}
                           className="experience-image"
                         />
                       )
-                    : exp.images.map((image, imgIndex) => (
+                    : selectedExperience.images.map((image, imgIndex) => (
                         <img
                           key={imgIndex}
                           src={image}
-                          alt={`${exp.title} Image ${imgIndex + 1}`}
+                          alt={`${selectedExperience.title} Image ${imgIndex + 1}`}
                           className="experience-image"
                         />
                       ))}
                 </div>
                 <div className="experience-description-subcard">
-                  <div className="experience-description">{exp.description}</div>
+                  <div className="experience-description">
+                    {selectedExperience.description}
+                  </div>
                 </div>
               </div>
               <div className="experience-links">
-                {exp.links.map((link, linkIndex) => (
-                  <a key={linkIndex} href={link.url} target="_blank" rel="noopener noreferrer" className="experience-link">{link.name}</a>
+                {selectedExperience.links.map((link, linkIndex) => (
+                  <a
+                    key={linkIndex}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="experience-link"
+                  >
+                    {link.name}
+                  </a>
                 ))}
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>
