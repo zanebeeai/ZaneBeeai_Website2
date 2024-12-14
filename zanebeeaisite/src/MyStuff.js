@@ -86,39 +86,43 @@ const experiences = [
         { name: 'Github', url: 'https://github.com/Sattelite-Campus/frontend-exosky' },
       ]
   },
-
   {
-    projName: 'Dunamis',
-    title: 'FBLA Canadian Nationals',
+    projName: 'WOSS Electrathon',
+    title: 'University of Waterloo Electric Vehicle Competition',
     description: (
       <div>
-      Dunamis is an interactive platform designed to streamline student engagement and collaboration. Inspired by the Greek word for "potential" (δύναμις), the platform empowers users by providing tailored dashboards, robust authentication systems, and intuitive user interfaces. 🌟
-      <ul>
-        <li><strong>Key Features:</strong></li>
+        Captained design and construction of a full-scale electric car to compete in uWaterloo's Electric Vehicle Competition. ⚡🚗
         <ul>
-          <li>Category and region-based activity tracking.</li>
-          <li>Secure authentication with JWT and MongoDB integration.</li>
-          <li>Scalable backend architecture to support growing user bases.</li>
+          <li><strong>Key Highlights:</strong></li>
+          <ul>
+            <li>Secured <strong>$3,000 in funding</strong> to support project materials and tools.</li>
+            <li>Collaborated with the school’s apprenticeship program and technical education curriculum to provide hands-on engineering access to <strong>40+ underrepresented students</strong> in STEM.</li>
+          </ul>
+          <li><strong>Leadership & Teamwork:</strong></li>
+          <ul>
+            <li>Led a diverse team of over <strong>30 students</strong> specializing in metalworking, welding, machining, CNCing, and CAD.</li>
+          </ul>
+          <li><strong>Technical Contributions:</strong></li>
+          <ul>
+            <li>Utilized CAD tools (Fusion360, AutoCAD, OnShape, Inventor) to design the electric vehicle and its subsystems, including the front suspension and rear drivetrain.</li>
+            <li>Conducted FEA and physics simulations to optimize the car design for speed and stability.</li>
+            <li>Created detailed technical drawings to manufacture vehicle components using a lathe, mill, riveting, and CNC machining.</li>
+          </ul>
         </ul>
-        <li><strong>Impact:</strong></li>
-        <ul>
-          <li>Over 60 active users in public beta with endorsement from an HDSB trustee.</li>
-          <li>Plans for expansion into B2B integration, customizable profiles, and mobile app support.</li>
-        </ul>
-      </ul>
-    </div>
+        This initiative exemplifies the intersection of engineering, teamwork, and innovative design, inspiring a new generation of STEM learners. 🚀🔧
+      </div>
     ),
     images: [
-      '/images/projects/dunamis1.jpg',
-      '/images/projects/dunamis2.png',
-
+      '/images/projects/electrathon1.jpg',
+      '/images/projects/electrathon2.png',
+      '/images/projects/electrathon3.jpg',
     ],
     links: [
-      { name: 'Try Dunamis', url: 'https://www.mydunamis.ca/' },
-      // { name: 'Project Summary', url: 'https://docs.google.com/presentation/d/1nLMgDGwfKsTfv4cKflvGhIW8QraJ2w0tziyHBR2Iors/edit?usp=sharing' },
-      // { name: 'Github', url: 'https://github.com/Sattelite-Campus/frontend-exosky' },
+      // { name: 'University of Waterloo EV Competition', url: 'https://uwaterloo.ca/ev-challenge/' },
+      // { name: 'Learn More About Electrathon', url: 'https://example.com/electrathon-overview' },
     ]
-},
+  },
+  
 {
   projName: 'N.O.M.A.D.',
   title: 'UofT Robotics Association',
@@ -222,7 +226,80 @@ const experiences = [
   links: [
     // { name: 'Overview', url: 'https://your-link-to-project-docs-or-presentation.pdf' },
   ]
-}
+},
+
+
+{
+  projName: 'Dunamis',
+  title: 'FBLA Canadian Nationals',
+  description: (
+    <div>
+    Dunamis is an interactive platform designed to streamline student engagement and collaboration. Inspired by the Greek word for "potential" (δύναμις), the platform empowers users by providing tailored dashboards, robust authentication systems, and intuitive user interfaces. 🌟
+    <ul>
+      <li><strong>Key Features:</strong></li>
+      <ul>
+        <li>Category and region-based activity tracking.</li>
+        <li>Secure authentication with JWT and MongoDB integration.</li>
+        <li>Scalable backend architecture to support growing user bases.</li>
+      </ul>
+      <li><strong>Impact:</strong></li>
+      <ul>
+        <li>Over 60 active users in public beta with endorsement from an HDSB trustee.</li>
+        <li>Plans for expansion into B2B integration, customizable profiles, and mobile app support.</li>
+      </ul>
+    </ul>
+  </div>
+  ),
+  images: [
+    '/images/projects/dunamis1.jpg',
+    '/images/projects/dunamis2.png',
+
+  ],
+  links: [
+    { name: 'Try Dunamis', url: 'https://www.mydunamis.ca/' },
+    // { name: 'Project Summary', url: 'https://docs.google.com/presentation/d/1nLMgDGwfKsTfv4cKflvGhIW8QraJ2w0tziyHBR2Iors/edit?usp=sharing' },
+    // { name: 'Github', url: 'https://github.com/Sattelite-Campus/frontend-exosky' },
+  ]
+},
+{
+  projName: 'Solara: Oracle of DSCOVR',
+  title: 'NASA Space Apps Challenge \'23',
+  description: (
+    <div>
+      Solara, developed during the NASA Space Apps Challenge 2023, enhances the open-source VISIONS platform to tackle climate change by visualizing chlorofluorocarbon (CFC) emissions and their impact on global warming. 🌍💡
+      <ul>
+        <li><strong>Core Features:</strong></li>
+        <ul>
+          <li>Integrated datasets on CFC emissions, solar flux, ozone, and temperature from NASA and other open sources.</li>
+          <li>Advanced visualization algorithms for greenhouse gas signatures, including CO<sub>2</sub> and methane.</li>
+          <li>Geospatial mapping to assess the effectiveness of policies like the Montreal Protocol.</li>
+        </ul>
+        <li><strong>Impact:</strong></li>
+        <ul>
+          <li>Demonstrates the global effect of reduced CFCs after the Montreal Protocol.</li>
+          <li>Highlights the critical role of atmospheric dynamics in tackling climate change.</li>
+          <li>Supports policy development by visualizing emissions trends and their impact.</li>
+        </ul>
+        <li><strong>Next Steps:</strong></li>
+        <ul>
+          <li>Incorporate geo-diverse datasets for broader leak detection capabilities.</li>
+          <li>Allow researchers to input and visualize novel datasets.</li>
+          <li>Improve the user interface for accessibility and stakeholder engagement.</li>
+        </ul>
+      </ul>
+      Solara exemplifies the power of open-source tools in advancing climate research and policy, ensuring a sustainable future for our planet. 🌞🌿
+    </div>
+  ),
+  images: [
+    '/images/projects/solara1.jpg', // Replace with actual paths or mockup links
+    '/images/projects/solara2.jpg',
+  ],
+  links: [
+    { name: 'Try Solara', url: 'https://solara.earth' },
+    { name: 'Project Documentation', url: 'https://www.spaceappschallenge.org/2023/find-a-team/satellite-campus-20/?tab=project' },
+    { name: '', url: 'https://solara.earth' },
+  ]
+},
 
 
 

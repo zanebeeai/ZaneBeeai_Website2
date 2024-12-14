@@ -431,7 +431,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Darker overlay for better contrast */
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for better contrast */
     color: #fff;
     padding: 15px;
     font-family: 'Montserrat', sans-serif; /* Match old site's font */
