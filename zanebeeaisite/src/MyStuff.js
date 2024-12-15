@@ -444,6 +444,7 @@ const MyStuff = () => {
                 <div className="experience-line"></div>
               </div>
               <h4 className="experience-subtitle">Here lies the elsewhere-mentioned "stuff".</h4>
+              <h4 className="experience-subtitle"><i>if a link doesn't work, i stopped paying for the domain :P</i></h4>
               <div className="experience-grid">
                 {experiences.map((exp, index) => (
                   <div
