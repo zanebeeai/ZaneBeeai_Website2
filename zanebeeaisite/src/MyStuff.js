@@ -469,52 +469,74 @@ const MyStuff = () => {
           ) : (
             // Detailed view
             <div className="experience">
-              <button onClick={handleBackClick} className="back-button">
-                back →
-              </button>
-              <h3 className="experience-title">{selectedExperience.projName}</h3>
-              <div className="experience-header">
-                <span className="institution">{selectedExperience.title}</span>
-              </div>
-              <div className="experience-body">
-                <div className="experience-images">
-                  {isMobile
-                    ? selectedExperience.images.length > 0 && (
-                        <img
-                          src={selectedExperience.images[0]}
-                          alt={`${selectedExperience.title} Main Image`}
-                          className="experience-image"
-                        />
-                      )
-                    : selectedExperience.images.map((image, imgIndex) => (
-                        <img
-                          key={imgIndex}
-                          src={image}
-                          alt={`${selectedExperience.title} Image ${imgIndex + 1}`}
-                          className="experience-image"
-                        />
-                      ))}
-                </div>
-                <div className="experience-description-subcard">
-                  <div className="experience-description">
-                    {selectedExperience.description}
-                  </div>
-                </div>
-              </div>
-              <div className="experience-links">
-                {selectedExperience.links.map((link, linkIndex) => (
-                  <a
-                    key={linkIndex}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="experience-link"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+  <button onClick={handleBackClick} className="back-button">
+    back →
+  </button>
+  <h3 className="experience-title">{selectedExperience.projName}</h3>
+  <div className="experience-header">
+    <span className="institution">{selectedExperience.title}</span>
+  </div>
+  <div className="experience-body">
+    {isMobile ? (
+      <>
+        <div className="experience-images">
+          <img
+            src={selectedExperience.images[0]}
+            alt={`${selectedExperience.title} Main Image`}
+            className="experience-main-image"
+          />
+        </div>
+        <div className="experience-description-subcard">
+          <div className="experience-description">
+            {selectedExperience.description}
+          </div>
+        </div>
+        <div className="experience-images-grid">
+          {selectedExperience.images.slice(1).map((image, imgIndex) => (
+            <img
+              key={imgIndex}
+              src={image}
+              alt={`${selectedExperience.title} Image ${imgIndex + 2}`}
+              className="experience-image-grid-item"
+            />
+          ))}
+        </div>
+      </>
+    ) : (
+      <>
+        <div className="experience-images">
+          {selectedExperience.images.map((image, imgIndex) => (
+            <img
+              key={imgIndex}
+              src={image}
+              alt={`${selectedExperience.title} Image ${imgIndex + 1}`}
+              className="experience-image"
+            />
+          ))}
+        </div>
+        <div className="experience-description-subcard">
+          <div className="experience-description">
+            {selectedExperience.description}
+          </div>
+        </div>
+      </>
+    )}
+  </div>
+  <div className="experience-links">
+    {selectedExperience.links.map((link, linkIndex) => (
+      <a
+        key={linkIndex}
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="experience-link"
+      >
+        {link.name}
+      </a>
+    ))}
+  </div>
+</div>
+
           )}
         </div>
       </div>
