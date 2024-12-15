@@ -50,7 +50,7 @@ const experiences = [
       title: 'NASA Space Apps Challenge \'24',
       description: (
         <div>
-          Voyager-O is a platform developed during the NASA Space Apps Challenge 2024 to expand the functionality of the existing Eyes on Exoplanets platform. 🚀✨ 
+          Voyager-O is a platform developed during the NASA Space Apps Challenge 2024 to expand the functionality of the existing Eyes on Exoplanets platform. 🚀✨
           <ul>
             <li><strong>Mission:</strong></li>
             <ul>
@@ -70,7 +70,7 @@ const experiences = [
               <li>Film and game development for realistic depictions of alien skies and planetary systems.</li>
             </ul>
           </ul>
-          also we met <i>Gen V</i> actors shooting @ UTM which was AWESOME!  
+          also we met <i>Gen V</i> actors shooting @ UTM which was AWESOME!
         </div>
       ),
       images: [
@@ -88,7 +88,8 @@ const experiences = [
   },
   {
     projName: 'WOSS Electrathon',
-    title: 'University of Waterloo Electric Vehicle Competition',
+    // title: 'University of Waterloo Electric Vehicle Competition',
+    title: 'Founder, President',
     description: (
       <div>
         Captained design and construction of a full-scale electric car to compete in uWaterloo's Electric Vehicle Competition. ⚡🚗
@@ -122,7 +123,56 @@ const experiences = [
       // { name: 'Learn More About Electrathon', url: 'https://example.com/electrathon-overview' },
     ]
   },
-  
+  {
+    projName: 'LEGO Historical Firearms',
+    title: 'A Kid-Friendly Arsenal',
+    description: (
+      <div>
+        <p>
+          Designed and constructed <b>15+ full-scale LEGO firearms</b> featuring historical accuracy and functional firing capabilities. Each model balances intricate detailing, mechanical precision, and instructional clarity to replicate iconic firearms using LEGO bricks. 🔧🔫
+        </p>
+        <ul>
+          <li>
+            <strong>Key Models:</strong>
+            <ul>
+              <li><b>Steyr AUG:</b> Fully automatic, magazine-fed firing mechanism.</li>
+              <li><b>Glock 19:</b> Semi-automatic, magazine-fed functionality.</li>
+              <li><b>M4A1:</b> Full-scale replica with functional, accurate magazine design.</li>
+              <li><b>M1918 Thompson:</b> Historically accurate model with functional magazines.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Innovations:</strong>
+            <ul>
+              <li>Engineered firing systems using LEGO Technic and brick mechanisms.</li>
+              <li>Produced full instructional sheets for all models to enable replication.</li>
+              <li>Ensured historically accurate dimensions and assembly techniques.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Impact:</strong>
+            <ul>
+              <li>Blended engineering design principles with creative LEGO construction.</li>
+              <li>Published and shared instructional sheets with the LEGO community.</li>
+              <li>Inspiring others to explore mechanical engineering through LEGO modeling.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          This project demonstrates the power of creative engineering and design, combining historical research and functional prototyping to deliver models that are both <b>accurate</b> and <b>functional</b>. 🔨📏
+        </p>
+      </div>
+    ),
+    images: [
+      '/images/projects/lego_aug.png', // Replace with actual paths
+      '/images/projects/lego_thompson.png',
+      '/images/projects/lego_glock19.png',
+      '/images/projects/lego_m4a1.png',
+    ],
+    links: [
+      // Include links if there are published instruction sheets or photo galleries
+    ],
+  },
 {
   projName: 'N.O.M.A.D.',
   title: 'UofT Robotics Association',
@@ -162,6 +212,89 @@ const experiences = [
     { name: 'Project Summary', url: 'https://satellite-campus.tech/' },
   ]
 },
+
+{
+  projName: 'Water-Recycling Irrigation System',
+  title: 'St. Thomas Aquinas Secondary School',
+  description: (
+    <div>
+      Designed and implemented an automated water-recycling irrigation system for the rooftop garden at St. Thomas Aquinas SS. 🌱💧
+      <ul>
+        <li><strong>Core Features:</strong></li>
+        <ul>
+          <li>Rainwater collection system integrated with ESP-controlled irrigation.</li>
+          <li>Electrical engineering design for supply-based automatic water distribution.</li>
+          <li>Manual refill option to ensure consistent irrigation cycles.</li>
+        </ul>
+        <li><strong>Impact:</strong></li>
+        <ul>
+          <li>Reduced water wastage by utilizing rooftop-collected rainfall.</li>
+          <li>Promoted sustainability and environmental awareness within the school.</li>
+        </ul>
+      </ul>
+      This project highlights the potential of IoT and engineering principles in fostering sustainable practices. 🌍🔧
+    </div>
+  ),
+  images: [
+    '/images/projects/waterirrigation1.png',
+    '/images/projects/waterirrigation2.jpg',
+  ],
+  links: [
+    // { name: 'Overview', url: 'https://your-link-to-project-docs-or-presentation.pdf' },
+  ]
+},
+
+{
+  projName: 'Bean Bags of the Coalition',
+  title: 'Halton Hacks',
+  description: (
+    <div>
+      <p>
+        Returning to the nostalgic roots of local multiplayer gaming, <b>Bean Bags of the Coalition</b> was developed in under 8 hours during Halton Hacks. Inspired by <em>Call of Duty Black Ops 2</em> split-screen, this FPS brought back the joy of laid-back, screen-peeking gaming with friends. 🎮🕹
+      </p>
+      <ul>
+        <li>
+          <strong>Development Highlights:</strong>
+          <ul>
+            <li>Created a dynamic local multiplayer FPS game in 8 hours.</li>
+            <li>Features smooth, competitive gameplay and custom-designed maps.</li>
+            <li>Optimized visuals for nostalgic "BO2-style" aesthetics.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Recognition:</strong>
+          <ul>
+            <li>Awarded <b>Best Hack</b> by Regional Councillor Sammy Ijaz 🏆.</li>
+            <li>Praised for balancing creativity, fun, and execution.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Future Expansion:</strong>
+          <ul>
+            <li>Integrating keyboard/mouse support and online multiplayer features.</li>
+            <li>Expanding maps and gameplay modes.</li>
+            <li>Potential for console publishing.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        Halton Hacks was an incredible opportunity to develop something light-hearted while revisiting game development roots. Thank you for the <b>great food</b> and an unforgettable experience. 🚀
+      </p>
+    </div>
+  ),
+  images: [
+    '/images/projects/bbc1.png', // Replace with actual paths
+    '/images/projects/bbc2.jpg',
+    '/images/projects/bbc3.jpg',
+  ],
+  links: [
+    { name: 'Project Presentation', url: 'https://docs.google.com/presentation/d/1k-UtxzSdLXrclMWZuTcn0i3ZcpjFQPFlTxZ36tkNOxc/edit#slide=id.g26364cd06a6_1_3448' },
+    { name: 'Devpost Page', url: 'https://devpost.com/software/bean-bags-of-the-coalition' },
+    { name: 'News Coverage 📰', url: 'https://www.miltonvillager.com/haltons-first-hackathon-held-in-milton/' },
+  ],
+},
+
+
 {
   projName: 'DeltaPump',
   title: 'MoHacks HealthQuest Hackathon',
@@ -197,36 +330,50 @@ const experiences = [
   ]
 },
 
+
+
 {
-  projName: 'Water Recycling Irrigation System',
-  title: 'St. Thomas Aquinas Secondary School',
+  projName: 'Solara CFC',
+  title: 'NASA Space Apps Challenge \'23',
   description: (
     <div>
-      Designed and implemented an automated water-recycling irrigation system for the rooftop garden at St. Thomas Aquinas SS. 🌱💧
+      Solara, developed during the NASA Space Apps Challenge 2023, enhances the open-source VISIONS platform to tackle climate change by visualizing chlorofluorocarbon (CFC) emissions and their impact on global warming. 🌍💡
       <ul>
         <li><strong>Core Features:</strong></li>
         <ul>
-          <li>Rainwater collection system integrated with ESP-controlled irrigation.</li>
-          <li>Electrical engineering design for supply-based automatic water distribution.</li>
-          <li>Manual refill option to ensure consistent irrigation cycles.</li>
+          <li>Integrated datasets on CFC emissions, solar flux, ozone, and temperature from NASA and other open sources.</li>
+          <li>Advanced visualization algorithms for greenhouse gas signatures, including CO<sub>2</sub> and methane.</li>
+          <li>Geospatial mapping to assess the effectiveness of policies like the Montreal Protocol.</li>
         </ul>
         <li><strong>Impact:</strong></li>
         <ul>
-          <li>Reduced water wastage by utilizing rooftop-collected rainfall.</li>
-          <li>Promoted sustainability and environmental awareness within the school.</li>
+          <li>Demonstrates the global effect of reduced CFCs after the Montreal Protocol.</li>
+          <li>Highlights the critical role of atmospheric dynamics in tackling climate change.</li>
+          <li>Supports policy development by visualizing emissions trends and their impact.</li>
+        </ul>
+        <li><strong>Next Steps:</strong></li>
+        <ul>
+          <li>Incorporate geo-diverse datasets for broader leak detection capabilities.</li>
+          <li>Allow researchers to input and visualize novel datasets.</li>
+          <li>Improve the user interface for accessibility and stakeholder engagement.</li>
         </ul>
       </ul>
-      This project highlights the potential of IoT and engineering principles in fostering sustainable practices. 🌍🔧
+      Solara was selected as a Global Finalist for the biggest hackathon in the world; top 40 teams of 56k participants.🌞🌿
     </div>
   ),
   images: [
-    '/images/projects/waterirrigation1.png',
-    '/images/projects/waterirrigation2.jpg',
+    '/images/projects/solara1.jpg', // Replace with actual paths or mockup links
+    '/images/projects/solara2.jpg',
   ],
   links: [
-    // { name: 'Overview', url: 'https://your-link-to-project-docs-or-presentation.pdf' },
+    { name: 'Try Solara', url: 'https://solara.earth' },
+    { name: 'Project Documentation', url: 'https://www.spaceappschallenge.org/2023/find-a-team/satellite-campus-20/?tab=project' },
+    { name: 'News Coverage 📰', url: 'https://spaceq.ca/canadians-are-global-finalists-in-the-space-apps-challenge/' },
+
+    // { name: '', url: 'https://solara.earth' },
   ]
 },
+
 
 
 {
@@ -261,46 +408,6 @@ const experiences = [
     // { name: 'Github', url: 'https://github.com/Sattelite-Campus/frontend-exosky' },
   ]
 },
-{
-  projName: 'Solara: Oracle of DSCOVR',
-  title: 'NASA Space Apps Challenge \'23',
-  description: (
-    <div>
-      Solara, developed during the NASA Space Apps Challenge 2023, enhances the open-source VISIONS platform to tackle climate change by visualizing chlorofluorocarbon (CFC) emissions and their impact on global warming. 🌍💡
-      <ul>
-        <li><strong>Core Features:</strong></li>
-        <ul>
-          <li>Integrated datasets on CFC emissions, solar flux, ozone, and temperature from NASA and other open sources.</li>
-          <li>Advanced visualization algorithms for greenhouse gas signatures, including CO<sub>2</sub> and methane.</li>
-          <li>Geospatial mapping to assess the effectiveness of policies like the Montreal Protocol.</li>
-        </ul>
-        <li><strong>Impact:</strong></li>
-        <ul>
-          <li>Demonstrates the global effect of reduced CFCs after the Montreal Protocol.</li>
-          <li>Highlights the critical role of atmospheric dynamics in tackling climate change.</li>
-          <li>Supports policy development by visualizing emissions trends and their impact.</li>
-        </ul>
-        <li><strong>Next Steps:</strong></li>
-        <ul>
-          <li>Incorporate geo-diverse datasets for broader leak detection capabilities.</li>
-          <li>Allow researchers to input and visualize novel datasets.</li>
-          <li>Improve the user interface for accessibility and stakeholder engagement.</li>
-        </ul>
-      </ul>
-      Solara exemplifies the power of open-source tools in advancing climate research and policy, ensuring a sustainable future for our planet. 🌞🌿
-    </div>
-  ),
-  images: [
-    '/images/projects/solara1.jpg', // Replace with actual paths or mockup links
-    '/images/projects/solara2.jpg',
-  ],
-  links: [
-    { name: 'Try Solara', url: 'https://solara.earth' },
-    { name: 'Project Documentation', url: 'https://www.spaceappschallenge.org/2023/find-a-team/satellite-campus-20/?tab=project' },
-    { name: '', url: 'https://solara.earth' },
-  ]
-},
-
 
 
 ];
