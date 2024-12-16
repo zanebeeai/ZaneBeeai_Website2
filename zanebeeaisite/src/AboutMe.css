@@ -264,7 +264,7 @@ html, body {
 
   /* Decrease font size for specific classes */
   .description-card {
-    font-size: 0.75em !important;
+    font-size: 0.95em !important;
   }
   .experience-title-container h2 {
     font-size: 1.5em !important;
@@ -299,7 +299,7 @@ html, body {
     text-align: justify;
     margin: 0 auto;
     padding: 15px;
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
   }
   /* If you have .experience-images or .experience-image classes, you can merge them here as well */
 }
