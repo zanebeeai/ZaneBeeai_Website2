@@ -56,7 +56,7 @@ const experiences = [
           <li><strong>Focus:</strong></li>
           <ul>
             <li>Analyzed high-speed optical imaging and acoustic frequency spectra of microbubble clouds.</li>
-            <li>Studied dynamic behaviors under pressures ranging from 100 kPa to 3000 kPa, relevant for focused ultrasound (FUS) therapies.</li>
+            <li>Studied dynamic behaviors under pressures ranging from 100 kPa to 3000 kPa, relevant for focused ultrasound (FUS) therapies</li>
           </ul>
           <li><strong>Techniques:</strong></li>
           <ul>
