@@ -281,6 +281,7 @@ const Home = () => {
         const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
         sphere.position.copy(position);
         sphere.userData = { link: link }; // Store link in userData
+        
 
         const linkTextGroups = [];
 
@@ -345,11 +346,19 @@ const Home = () => {
           mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
           mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
           raycaster.setFromCamera(mouse, camera);
-          const intersects = raycaster.intersectObjects(spheres); // Check all spheres
+          const intersects = raycaster.intersectObjects(spheres);
           if (intersects.length > 0) {
-            window.open(intersects[0].object.userData.link, "_blank");
+            const clickedSphere = intersects[0].object;
+            console.log(`Clicked sphere ID: ${clickedSphere.userData.id}`);
+            const { link } = intersects[0].object.userData;
+            if (link) {
+              window.open(link, "_blank");
+            } else {
+              console.error("No link defined for this sphere.");
+            }
           }
         }
+        
 
         window.addEventListener('click', onClick, false);
 
@@ -380,11 +389,15 @@ const Home = () => {
     }
 
     // Add clickable spheres
-    addClickableSphere(new THREE.Vector3(-1.5, -2, 0), 0.1, "images/logos/ORCID.png", "https://orcid.org/0009-0004-8781-5647", "ORCID     ");
-    addClickableSphere(new THREE.Vector3(-0.5, -2, 0), 0.1, "images/logos/Linkedin.png", "https://www.linkedin.com/in/zane-beeai/", "LinkedIn     ");
-    addClickableSphere(new THREE.Vector3(0.5, -2, 0), 0.1, "images/logos/Github.png", "https://github.com/zanzilla22", "GitHub     ");
-    addClickableSphere(new THREE.Vector3(1.5, -2, 0), 0.1, "images/logos/Devpost.png", "https://devpost.com/zanzilla22", "Devpost     ");
-
+    Promise.all([
+      addClickableSphere(new THREE.Vector3(-1.5, -2, 0), 0.1, "images/logos/ORCID.png", "https://orcid.org/0009-0004-8781-5647", "ORCID     "),
+      addClickableSphere(new THREE.Vector3(-0.5, -2, 0), 0.1, "images/logos/Linkedin.png", "https://www.linkedin.com/in/zane-beeai/", "LinkedIn     "),
+      addClickableSphere(new THREE.Vector3(0.5, -2, 0), 0.1, "images/logos/Github.png", "https://github.com/zanebeeai", "GitHub     "),
+      addClickableSphere(new THREE.Vector3(1.5, -2, 0), 0.1, "images/logos/Devpost.png", "https://devpost.com/zanzilla22", "Devpost     ")
+    ]).then(() => {
+      adjustForScreenSize();
+      console.log("All spheres loaded and ordered.");
+    }); 
     // Initial screen size adjustment will now happen after all spheres are loaded
   }, []);
 
