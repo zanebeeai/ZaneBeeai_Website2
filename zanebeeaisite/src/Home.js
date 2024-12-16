@@ -275,129 +275,134 @@ const Home = () => {
 
     // Function to add clickable spheres
     function addClickableSphere(position, radius, logo, link, linkName) {
-      createDoubleSidedTexture(logo, (texture) => {
-        const sphereMaterial = new THREE.MeshBasicMaterial({ map: texture });
-        const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
-        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-        sphere.position.copy(position);
-        sphere.userData = { link: link }; // Store link in userData
-        
-
-        const linkTextGroups = [];
-
-        fontLoader.load("/fonts/helvetiker_bold.json", (font) => {
-          for (let i = 0; i < linkName.length; i++) {
-            const charGeometry = new TextGeometry(linkName[i], {
-              font: font,
-              size: 0.05,
-              height: 0.05,
-              curveSegments: 12,
-              bevelEnabled: true,
-              bevelThickness: 0.01,
-              bevelSize: 0.01,
-              bevelOffset: 0,
-              bevelSegments: 5,
-            });
-
-            const charMesh = new THREE.Mesh(charGeometry, linksMaterial);
-            charGeometry.computeBoundingBox();
-            const boundingBox = charGeometry.boundingBox;
-            const charOffset = new THREE.Vector3();
-            boundingBox.getCenter(charOffset).negate();
-            charGeometry.translate(charOffset.x, charOffset.y, charOffset.z);
-
-            const charGroup = new THREE.Group();
-            charGroup.add(charMesh);
-
-            const angle = (i / linkName.length) * Math.PI * 2;
-            charGroup.position.x = Math.cos(angle) * (radius + 0.2);
-            charGroup.position.y = Math.sin(angle) * (radius + 0.2);
-            charGroup.rotation.z = -angle;
-
-            linkTextGroups.push(charGroup);
-            scene.add(charGroup);
-          }
-
-          const clock = new THREE.Clock();
-          const tick = () => {
-            const elapsedTime = clock.getElapsedTime();
-
-            // Rotate each character group around the sphere
-            linkTextGroups.forEach((group, index) => {
-              const angle = (index / linkName.length) * Math.PI * 2 + elapsedTime * 0.5;
-              group.position.x = sphere.position.x + Math.cos(angle) * (radius + 0.05);
-              group.position.y = sphere.position.y + Math.sin(angle) * (radius + 0.05);
-              group.rotation.z = -angle-Math.PI/2;
-            });
-
-            sphere.rotation.y += 0.01; // Spin the sphere slowly
-
-            renderer.render(scene, camera);
-            requestAnimationFrame(tick);
-          };
-          tick();
-        });
-
-        // Handle click events
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-
-        function onClick(event) {
-          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-          mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-          raycaster.setFromCamera(mouse, camera);
-          const intersects = raycaster.intersectObjects(spheres);
-          if (intersects.length > 0) {
-            const clickedSphere = intersects[0].object;
-            console.log(`Clicked sphere ID: ${clickedSphere.userData.id}`);
-            const { link } = intersects[0].object.userData;
-            if (link) {
-              window.open(link, "_blank");
-            } else {
-              console.error("No link defined for this sphere.");
+      return new Promise((resolve) => {
+        createDoubleSidedTexture(logo, (texture) => {
+          const sphereMaterial = new THREE.MeshBasicMaterial({ map: texture });
+          const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
+          const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+          sphere.position.copy(position);
+          sphere.userData = { link: link }; // Store link in userData
+          
+          const linkTextGroups = [];
+    
+          fontLoader.load("/fonts/helvetiker_bold.json", (font) => {
+            for (let i = 0; i < linkName.length; i++) {
+              const charGeometry = new TextGeometry(linkName[i], {
+                font: font,
+                size: 0.05,
+                height: 0.05,
+                curveSegments: 12,
+                bevelEnabled: true,
+                bevelThickness: 0.01,
+                bevelSize: 0.01,
+                bevelOffset: 0,
+                bevelSegments: 5,
+              });
+    
+              const charMesh = new THREE.Mesh(charGeometry, linksMaterial);
+              charGeometry.computeBoundingBox();
+              const boundingBox = charGeometry.boundingBox;
+              const charOffset = new THREE.Vector3();
+              boundingBox.getCenter(charOffset).negate();
+              charGeometry.translate(charOffset.x, charOffset.y, charOffset.z);
+    
+              const charGroup = new THREE.Group();
+              charGroup.add(charMesh);
+    
+              const angle = (i / linkName.length) * Math.PI * 2;
+              charGroup.position.x = Math.cos(angle) * (radius + 0.2);
+              charGroup.position.y = Math.sin(angle) * (radius + 0.2);
+              charGroup.rotation.z = -angle;
+    
+              linkTextGroups.push(charGroup);
+              scene.add(charGroup);
             }
-          }
-        }
-        
-
-        window.addEventListener('click', onClick, false);
-
-        // Handle cursor style
-        function onMouseMove(event) {
-          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-          mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-          raycaster.setFromCamera(mouse, camera);
-          const intersects = raycaster.intersectObjects(spheres); // Check all spheres
-          if (intersects.length > 0) {
-            document.body.style.cursor = 'pointer';
-          } else {
-            document.body.style.cursor = 'default';
-          }
-        }
-
-        window.addEventListener('mousemove', onMouseMove, false);
-
-        scene.add(sphere);
-        spheres.push(sphere); // Add sphere to array
-
-        // Check if all spheres are loaded
-        spheresLoaded++;
-        if (spheresLoaded === totalSpheres) {
-          adjustForScreenSize();
-        }
+    
+            const clock = new THREE.Clock();
+            const tick = () => {
+              const elapsedTime = clock.getElapsedTime();
+    
+              // Rotate each character group around the sphere
+              linkTextGroups.forEach((group, index) => {
+                const angle = (index / linkName.length) * Math.PI * 2 + elapsedTime * 0.5;
+                group.position.x = sphere.position.x + Math.cos(angle) * (radius + 0.05);
+                group.position.y = sphere.position.y + Math.sin(angle) * (radius + 0.05);
+                group.rotation.z = -angle - Math.PI / 2;
+              });
+    
+              sphere.rotation.y += 0.01; // Spin the sphere slowly
+    
+              renderer.render(scene, camera);
+              requestAnimationFrame(tick);
+            };
+            tick();
+          });
+    
+          // Add sphere to the scene
+          scene.add(sphere);
+          spheres.push(sphere); // Add sphere to array
+          
+          // Resolve the Promise when the sphere is fully added
+          resolve();
+        });
       });
     }
+    
 
     // Add clickable spheres
-    Promise.all([
-      addClickableSphere(new THREE.Vector3(-1.5, -2, 0), 0.1, "images/logos/ORCID.png", "https://orcid.org/0009-0004-8781-5647", "ORCID     "),
-      addClickableSphere(new THREE.Vector3(-0.5, -2, 0), 0.1, "images/logos/Linkedin.png", "https://www.linkedin.com/in/zane-beeai/", "LinkedIn     "),
-      addClickableSphere(new THREE.Vector3(0.5, -2, 0), 0.1, "images/logos/Github.png", "https://github.com/zanebeeai", "GitHub     "),
-      addClickableSphere(new THREE.Vector3(1.5, -2, 0), 0.1, "images/logos/Devpost.png", "https://devpost.com/zanzilla22", "Devpost     ")
-    ]).then(() => {
-      adjustForScreenSize();
-      console.log("All spheres loaded and ordered.");
-    }); 
+    Promise.resolve()
+  .then(() => addClickableSphere(new THREE.Vector3(-1.5, -2, 0), 0.1, "images/logos/ORCID.png", "https://orcid.org/0009-0004-8781-5647", "ORCID     "))
+  .then(() => addClickableSphere(new THREE.Vector3(-0.5, -2, 0), 0.1, "images/logos/Linkedin.png", "https://www.linkedin.com/in/zane-beeai/", "LinkedIn     "))
+  .then(() => addClickableSphere(new THREE.Vector3(0.5, -2, 0), 0.1, "images/logos/Github.png", "https://github.com/zanebeeai", "GitHub     "))
+  .then(() => addClickableSphere(new THREE.Vector3(1.5, -2, 0), 0.1, "images/logos/Devpost.png", "https://devpost.com/zanzilla22", "Devpost     "))
+  .then(() => {
+    adjustForScreenSize();
+
+    // Add the click and hover event listeners here
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    // Click handler
+    function onClick(event) {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(spheres);
+
+      if (intersects.length > 0) {
+        const { link } = intersects[0].object.userData;
+        if (link) {
+          window.open(link, "_blank");
+        } else {
+          console.error("Sphere does not have a link.");
+        }
+      }
+    }
+
+    // Hover handler for pointer style
+    function onMouseMove(event) {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(spheres);
+
+      if (intersects.length > 0) {
+        document.body.style.cursor = "pointer";
+      } else {
+        document.body.style.cursor = "default";
+      }
+    }
+
+    // Attach the event listeners
+    window.addEventListener("click", onClick);
+    window.addEventListener("mousemove", onMouseMove);
+
+    console.log("All spheres loaded, clickable, and event listeners added.");
+  });
+
+
     // Initial screen size adjustment will now happen after all spheres are loaded
   }, []);
 
