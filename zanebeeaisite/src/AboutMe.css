@@ -349,3 +349,25 @@ body {
 html, body {
   height: auto; /* Ensure content is scrollable */
 }
+
+@media (max-width: 768px) {
+  .description-card {
+    font-size: 1em; /* Reduce font size for smaller screens */
+  }
+
+  .experience-title-container h2 {
+    font-size: 1.8em; /* Adjust title size */
+  }
+
+  .experience-subtitle {
+    font-size: 0.7em; /* Slightly reduce subtitle font size */
+  }
+
+  .institution {
+    font-size: 0.9em; /* Reduce institution text size */
+  }
+
+  .experience-description {
+    font-size: 0.9em; /* Adjust description text size */
+  }
+}
