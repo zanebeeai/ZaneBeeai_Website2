@@ -116,6 +116,7 @@ const experiences = [
     images: [
       '/images/projects/electrathon1.jpg',
       '/images/projects/electrathon2.png',
+      '/images/projects/electrathon4.jpg',
       '/images/projects/electrathon3.jpg',
     ],
     links: [
