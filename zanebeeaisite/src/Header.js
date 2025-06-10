@@ -22,8 +22,16 @@ const Header = () => {
       <div className="header-right">
         <button className="header-button" onClick={() => navigate('/aboutMe')}>aboutMe</button>
         <button className="header-button" onClick={() => navigate('/myStuff')}>myStuff</button>
-        <button className="header-button" onClick={() => navigate('/zaneBeeai_resume.pdf')}>resume📄</button>
-      </div>
+        <a
+  className="header-button"
+  href="/zaneBeeai_resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: 'none' }}
+>
+  resume📄
+</a>
+</div>
       <div className="header-underline"></div>
     </div>
   );
