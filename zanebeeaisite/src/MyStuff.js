@@ -96,6 +96,7 @@ const experiences = [
         <ul>
           <li><strong>Key Highlights:</strong></li>
           <ul>
+            <li>Deisgned and built in 4 months, won the <strong>Dennis Weishar Engineering Design Award</strong> for innovation in 2025 race.</li>
             <li>Secured <strong>$3,000 in funding</strong> to support project materials and tools.</li>
             <li>Collaborated with the school’s apprenticeship program and technical education curriculum to provide hands-on engineering access to <strong>40+ underrepresented students</strong> in STEM.</li>
           </ul>
@@ -114,12 +115,13 @@ const experiences = [
       </div>
     ),
     images: [
-      '/images/projects/electrathon1.jpg',
-      '/images/projects/electrathon2.png',
-      '/images/projects/electrathon4.jpg',
-      '/images/projects/electrathon3.jpg',
+      // '/images/projects/electrathon1.jpg',
+      '/images/projects/electrathon7.jpg  ',
+      '/images/projects/electrathon5.jpg',
+      '/images/projects/electrathon6.jpg',
     ],
     links: [
+      { name: 'Github', url: 'https://github.com/zanebeeai/WarRig' },
       // { name: 'University of Waterloo EV Competition', url: 'https://uwaterloo.ca/ev-challenge/' },
       // { name: 'Learn More About Electrathon', url: 'https://example.com/electrathon-overview' },
     ]
