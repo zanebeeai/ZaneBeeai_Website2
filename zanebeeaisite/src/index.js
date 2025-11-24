@@ -6,6 +6,7 @@ import Home from './Home';
 import AboutMe from './AboutMe';
 import MyStuff from './MyStuff';
 import reportWebVitals from './reportWebVitals';
+import { Analytics } from '@vercel/analytics/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
         <Route path="/myStuff" element={<MyStuff />} />
       </Routes>
     </Router>
+    <Analytics />
   </React.StrictMode>
 );
 
